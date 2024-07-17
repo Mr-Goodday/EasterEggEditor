@@ -1,0 +1,270 @@
+/* ================================================== Imports */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* =================================================== Resets */
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    line-height: 128%;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-1);
+    cursor: default;
+    transition: .2s;
+}
+
+/* ================================================ Variables */
+
+:root {
+    --text-1: #e9ebef;
+    --text-2: #0f1115;
+
+    --background-1: #0c0c0f;
+    --background-2: #f1f1f4cc;
+
+    --primary: #90f6d0;
+    --secondary: #5b387a;
+
+    --accent: #a26abb;
+}
+
+/* =================================================== Basics */
+
+html {
+    hanging-punctuation: first last;
+    color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    :has(:target) {
+        scroll-behavior: smooth;
+        scroll-padding-top: calc(var(--header-height) * 2);
+    }
+}
+
+body {
+    display: flex;
+    height: 100svh;
+    padding: 16px;
+    background-color: var(--background-1);
+}
+
+/* img { user-select: none; } */
+
+/* ===================================================== main */
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: calc(100% - 512px);
+    min-width: 50%;
+}
+
+/* ====================================================== egg */
+
+#egg {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    --egg-size: 300px;
+
+    height: calc(var(--egg-size) * 1.4);
+    width: var(--egg-size);
+    border-radius: 50% 50% calc(var(--egg-size) / 2) calc(var(--egg-size) / 2);
+    overflow-x: hidden;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.15) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.1) 0px 2px 1px, rgba(0, 0, 0, 0.1) 0px 4px 2px, rgba(0, 0, 0, 0.1) 0px 8px 4px, rgba(0, 0, 0, 0.1) 0px 16px 8px, rgba(0, 0, 0, 0.1) 0px 32px 16px;
+}
+
+.egg-part {
+    object-fit: cover;
+    /* object-position: center; */
+    z-index: -1; 
+    width: 100%;
+}
+
+#part-3, #part-btn-3 {
+    object-position: bottom;
+    height: calc(100% / 3);
+    clip-path: polygon(50% 0%, 75% 25%, 100% 0, 100% 100%, 0 100%, 0 0, 25% 25%);
+
+    
+
+    /* border-bottom: 64px solid var(--secondary); */
+}
+
+#part-btn-3 {
+    border-top: 64px solid;
+    border-top-color: var(--borderTop, transparent);
+    border-bottom: 32px solid;
+    border-bottom-color: var(--borderBottom, transparent);
+}
+
+#part-2, #part-btn-2 {
+    object-position: center;
+    z-index: -2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50%;
+}
+
+#part-1, #part-btn-1 {
+    object-position: top;
+    z-index: 3;
+    height: calc(100% / 3);
+    clip-path: polygon(50% 100%, 75% 75%, 100% 100%, 100% 0, 0 0, 0 100%, 25% 75%);
+
+    
+
+    /* border-bottom: 64px solid var(--secondary); */
+}
+
+#part-btn-1 {
+    border-top: 32px solid;
+    border-top-color: var(--borderTop, transparent);
+    border-bottom: 64px solid;
+    border-bottom-color: var(--borderBottom, transparent);
+}
+
+.egg-part-btn {
+    z-index: 99 !important;
+    position: absolute;
+    width: 100%;
+    /* background: red; */
+}
+
+#part-btn-1, #part-btn-3 {z-index: 100 !important;}
+
+#part-btn-3 {bottom: 0;}
+
+#egg:has(#part-btn-3:hover) #part-3 {filter: brightness(80%);}
+#egg:has(#part-btn-2:hover) #part-2 {filter: brightness(80%);}
+#egg:has(#part-btn-1:hover) #part-1 {filter: brightness(80%);}
+
+button {
+    position: absolute;
+    bottom: 32px;
+    border: none;
+    padding: 4px 16px;
+    border-radius: 8px;
+    background-color: var(--background-2);
+    color: var(--text-2);
+    font-weight: 800;
+}
+
+button:hover {
+    background-color: var(--accent);
+}
+
+button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    filter: blur(10px);
+    transition: .2s;
+}
+
+button:hover::after {border: 5px solid var(--accent);}
+
+/* ====================================================== nav */
+
+nav {
+    position: relative;
+    height: 100%;
+    width: min(512px, 50%);
+    padding: 12px;
+    border-radius: 16px;
+    background-color: var(--background-2);
+    border: 4px solid var(--primary);
+}
+
+nav>ul {
+    width: 100%;
+    list-style: none;
+}
+
+
+nav>ul:first-child {
+    display: grid;
+    height: calc(100% - 128px);
+    grid-template-columns: repeat(4, 25%);
+    margin-bottom: 4px;
+}
+
+nav>ul:first-child>img {
+    height: 100%;
+    width: 100%;
+    padding: 4px;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+}
+nav>ul:first-child:has(.flag)>img:not(.flag) {
+    opacity: .8;
+    filter: saturate(.1) brightness(.8);
+    /* border: 2px solid red; */
+}
+
+nav>ul:first-child:has(:hover)>img:not(:hover) {
+    scale: .925;
+}
+
+nav>ul:last-child {
+    display: flex;
+    height: 128px;
+}
+
+nav>ul:last-child>li {
+    width: 25%;
+}
+
+nav::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    border-radius: 16px;
+    border: 6px solid var(--primary);
+    filter: blur(10px);
+}
+
+/* =================================================== INPUTS */
+
+input[type="color"] {
+    opacity: 0;
+}
+
+#kolory {
+    display: flex;
+    flex-direction: row;
+    border-top: 2px solid var(--accent);
+    border-radius: 8px;
+}
+
+label {
+    background-color: var(--bg);
+    width: 25%;
+    border-radius: 4px;
+    border: 2px solid var(--secondary);
+    margin-inline: 4px;
+    margin-top: 8px;
+    cursor: pointer;
+}

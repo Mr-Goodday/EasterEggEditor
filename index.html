@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="src/img/52974601-jajko-wielkanocne-removebg-preview.png">
+    <link rel="stylesheet" href="src/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malowanie Jajec</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <main>
+        <div id="egg">
+            <img src="src/img/360_F_94422632_IAeQZJypamRV1cTDHUgUiCFtlapg5k4E.jpg" alt="part-1" class="egg-part" id="part-1" >
+            
+            <img src="src/img/360_F_94422632_IAeQZJypamRV1cTDHUgUiCFtlapg5k4E.jpg" alt="part-2" class="egg-part" id="part-2">
+            
+            <img src="src/img/360_F_94422632_IAeQZJypamRV1cTDHUgUiCFtlapg5k4E.jpg" alt="part-3" class="egg-part" id="part-3" >
+            
+            <div class="egg-part-btn" id="part-btn-1" style="--borderTop: transparent; --borderBottom: transparent;"></div>
+            <div class="egg-part-btn" id="part-btn-2"></div>
+            <div class="egg-part-btn" id="part-btn-3" style="--borderTop: transparent; --borderBottom: transparent;"></div>
+        </div>
+        
+        <button onClick="window.location.reload();">Reset</button>
+    </main>
+
+    <nav class="images-container">
+        <ul>
+            <img src="src/img/1-papito.jpg" alt="textueres" class="img">
+            <img src="src/img/2-papito.jpg" alt="textueres" class="img">
+            <img src="src/img/3-papito.jpg" alt="textueres" class="img">
+            <img src="src/img/4-papito.jpg" alt="textueres" class="img">
+            <img src="src/img/5-papito.jpg" alt="textueres" class="img">
+            <img src="src/img/6-papito.jpg" alt="textueres" class="img">
+            <img src="src/img/7-papito.jpg" alt="textueres" class="img">
+            <img src="src/img/8-papito.jpg" alt="textueres" class="img">
+            <img src="src/img/9-papito.jpg" alt="textueres" class="img">
+            <img src="src/img/10-papito.jpg" alt="textueres" class="img">
+            <img src="src/img/11-papito.jpg" alt="textueres" class="img">
+            <img src="src/img/12-papito.jpg" alt="textueres" class="img">
+            <img src="src/img/13-papito.jpg" alt="textueres" class="img">
+            <img src="src/img/14-papito.jpg" alt="textueres" class="img">
+            <img src="src/img/15-papito.jpg" alt="textueres" class="img">
+            <img src="src/img/16-papito.jpg" alt="textueres" class="img">
+        </ul>
+
+        <ul id="kolory">
+            <label for="kolor1" style="--bg: #ffffff;"><input type="color" id="kolor1" value="#ffffff" ></label>
+            <label for="kolor2" style="--bg: #ffffff;"><input type="color" id="kolor2" value="#ffffff" ></label>
+            <label for="kolor3" style="--bg: #ffffff;"><input type="color" id="kolor3" value="#ffffff" ></label>
+            <label for="kolor4" style="--bg: #ffffff;"><input type="color" id="kolor4" value="#ffffff" ></label>
+        </ul>
+    </nav>
+    <script src="src/main.js"></script>
+</body>
+</html>
